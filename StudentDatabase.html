@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Home</title>
+      
+        <link href="style.css/main.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+<body>  
+     <main class="Main">
+      <header class="header">
+        <nav class="nav">
+            <a class="navButton" href="index.html">Home</a>
+            <a class="navButton" href="LivingStyleGuides.html">Living Style Guides</a>
+            <a class="navButton" href="colourPalette.html">Colour Palette</a>
+            <a class="navButton" href="CommonStyles.html">Common Styles</a>
+             <a class="navButton" href="ComponentsDesignGuides.html">Components Design</a>
+            <a class="navButton current" href="StudentDatabase.html">Student Database</a>
+        </nav>
+        </header>
+    
+    
+        <article class="main__Content" >
+         
+            <h1 class="main__Title">Student Database</h1>
+      
+           
+           <h2 class="main__Headings">Use of Local Storage</h2>
+            
+            <p>In this section, we look how we can use local storage to save, retrieve,reset and also change and manupulate the data using javascript.</p>
+              <noscript class= "noScript"> Your browser has JS disabled or doesnot support JS so, the forms localStorage and buttons donot work. Switch to newer browser or
+            enable JS.</noscript>
+            
+            
+            
+            <section class="Database__Usagenotes">
+                <h3>Notes to use localStorage</h3>
+                <p> Some browsers many not have localstorage or are not compatible, as it is must for using localstorage, in that case the button below shows whether your browser is compatible to localStorge and if it has local storage.</p>
+              
+                <button id="lSchecker_button">LocalStorage Compatible ?</button>
+            <label id="localStorageCompatible"></label>
+                
+                <p>The following rules have to be followed to access anf edit the data from the database:</p>
+                <ul>
+                    <li>The database has validation checks. therefore, it will not save unless all requirements are met</li>
+                    <li>Change And Delete Element displays a box, so that, data can be changed based on their indexes.</li>
+                    <li>The indexes are based on the 5 data fields so, Name is given the first place, Date is given the second place and show on. The pattern is repeated every 5 element so, A object has indexes to it</li>
+                    <li>For example, to access/edit email in second object in list, the index starts at 0 and email is in third position of second object so, index will be 7.</li>
+                </ul>
+            </section>
+            
+              <form class="main__forms">
+               <div>
+                   <label class="formlabels" for="name">Name:</label>
+                   <input type="text" id="name" name="user_name">
+                     <label class="Reqforformlabel"></label>
+               </div>
+               
+           <div>
+               <label class="formlabels" for="date">Date:</label>
+                   <input type="date" id="date" name="Datetime_stored" >
+               <label class="Reqforformlabel"></label>
+               </div>
+               <div>
+                   <label  class="formlabels" for="email">Email:</label>
+                   <input type="email" id="email"  name="user_mail"  placeholder = "awesome@gmail.com"  >
+                   <label class="Reqforformlabel"></label>
+               </div>
+               <div>
+                   <label class="formlabels" for="password">Password:</label>
+                   <input type="password" id="password" name="user_password" >
+                   <label class="Reqforformlabel"></label>
+               </div>
+               <div>
+               <label class="formlabels" for="message">Message:</label>
+                <textarea id="message" name="user_message"></textarea>
+                   <label class="Reqforformlabel"></label>
+               </div>
+                  
+               
+               <div class="formbutton">
+                   <button type="button" id="enter">Enter</button>
+                   <button type="button" class="retrieve">Retrieve</button>
+                   <button type="button" id="reset">reset</button>
+                     <button type="button" id="changeShow">Change Element</button>
+                    <button type="button" id="deleteElShow">delete Element</button>
+                   
+               </div>
+                  
+                  
+           </form>
+            
+            
+            <form class="main__forms" >
+             <div>
+                  <label class="formlabels" for="edit">index to edit</label>
+                   <input type="text" id="key" name="key" >
+                      <label id="correctionLabel1"></label>
+                  </div>
+                   <div>
+                  <label class="formlabels" for="edit">value to store</label>
+                   <input type="text" id="value" name="value" >
+                        <label id="correctionLabel2"></label>
+                  </div>
+                 
+                 <div class="formbutton">
+                      <button type="button" id="change">Change</button>
+                    
+                </div>
+                  
+           </form>
+            
+            <form class="main__forms" >
+                <div>
+                  <label class="formlabels" for="edit">index of data to delete</label>
+                   <input  id="deleteValue" name="value" pattern=".{1,32}">
+                    <label id="correctionLabel3"></label>
+                  </div>
+                 <div class="formbutton">
+                    <button type="button" id="deleteEl">delete</button>
+                </div>
+            </form>
+            
+             
+            <div class="localdatabase__resultContainer">
+                <p>result console:</p>
+                <hr>
+           <pre class="localdatabase__result" id="output"></pre>
+           </div>
+            
+             <section class="Edge_Cases">
+                 <h2 class="main__headings">Edge Cases</h2>
+                 <p>The following are the edges cases in the site:</p>
+                 <ul>
+                 <li>The input field when used Node.textContent wont be reset when enter button presses.
+                     jquery  is used in main.js file to find all the input field and textarea to fix the problem.</li>
+                     <li>Email validation for email and date validation will validate even if wrong requirement was provided.
+                         So,requirements are defined and jquery is used to validate them.</li>
+                 </ul>
+                 
+                 
+            </section>
+                
+        </article>
+         
+        <footer >
+             <div class="footer__links">
+                 <p>Useful links:</p>
+                <a  href="index.html">Home</a>
+            <a  href="LivingStyleGuides.html">Living Style Guides</a>
+            <a  href="colourPalette.html">Colour Palette</a>
+            <a  href="CommonStyles.html">Common Styles</a>
+             <a  href="ComponentsDesignGuides.html">Components Design</a>
+                 <a href="StudentDatabase.html">Student Database</a>
+                 
+                 
+             </div>
+        <address class="Developer__info">
+             <p>Aayush Sapkota s283859    Email: 96.estd@gmail.com </p>
+             </address>
+        </footer>
+    </main>
+     <script src="js/vendor/jquery%203.2.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
+
